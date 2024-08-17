@@ -1,0 +1,29 @@
+root@DESKTOP-PTIJ6PV:/home/workspace/client-go/klog# go run main.go -v=0
+I0626 14:31:33.005052  213811 main.go:17] This is an info message
+W0626 14:31:33.005185  213811 main.go:18] This is a warning message
+E0626 14:31:33.005219  213811 main.go:19] This is an error message
+root@DESKTOP-PTIJ6PV:/home/workspace/client-go/klog# go run main.go -v=1
+I0626 14:31:34.583603  213915 main.go:17] This is an info message
+W0626 14:31:34.583824  213915 main.go:18] This is a warning message
+E0626 14:31:34.583837  213915 main.go:19] This is an error message
+I0626 14:31:34.583843  213915 main.go:22] This is a level 1 verbosity message
+root@DESKTOP-PTIJ6PV:/home/workspace/client-go/klog# go run main.go -v=2
+I0626 14:31:36.138329  214016 main.go:17] This is an info message
+W0626 14:31:36.138473  214016 main.go:18] This is a warning message
+E0626 14:31:36.138481  214016 main.go:19] This is an error message
+I0626 14:31:36.138487  214016 main.go:22] This is a level 1 verbosity message
+I0626 14:31:36.138492  214016 main.go:23] This is a level 2 verbosity message
+root@DESKTOP-PTIJ6PV:/home/workspace/client-go/klog# go run main.go -v=3
+I0626 14:31:38.238037  214119 main.go:17] This is an info message
+W0626 14:31:38.238188  214119 main.go:18] This is a warning message
+E0626 14:31:38.238197  214119 main.go:19] This is an error message
+I0626 14:31:38.238203  214119 main.go:22] This is a level 1 verbosity message
+I0626 14:31:38.238209  214119 main.go:23] This is a level 2 verbosity message
+I0626 14:31:38.238216  214119 main.go:24] This is a level 3 verbosity message
+root@DESKTOP-PTIJ6PV:/home/workspace/client-go/klog# go run main.go -v=4
+I0626 14:31:40.102759  214237 main.go:17] This is an info message
+W0626 14:31:40.102904  214237 main.go:18] This is a warning message
+E0626 14:31:40.102976  214237 main.go:19] This is an error message
+I0626 14:31:40.103003  214237 main.go:22] This is a level 1 verbosity message
+I0626 14:31:40.103009  214237 main.go:23] This is a level 2 verbosity message
+I0626 14:31:40.103016  214237 main.go:24] This is a level 3 verbosity message
