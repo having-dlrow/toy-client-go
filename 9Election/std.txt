@@ -1,0 +1,13 @@
+go run main.go -logtostderr=true -id 2
+I0818 03:26:36.796932   31314 leaderelection.go:254] attempting to acquire leader lease default/example...
+I0818 03:26:36.887318   31314 leaderelection.go:268] successfully acquired lease default/example
+I0818 03:26:36.887668   31314 main.go:58] Controller loop...
+
+go run main.go -logtostderr=true -id 1
+I0818 03:26:42.499301   31451 leaderelection.go:254] attempting to acquire leader lease default/example...
+I0818 03:26:42.529595   31451 main.go:122] new leader elected: 2
+
+go run main.go -logtostderr=true -id 3
+I0818 03:26:44.719013   31573 leaderelection.go:254] attempting to acquire leader lease default/example...
+I0818 03:26:44.738443   31573 main.go:122] new leader elected: 2
+

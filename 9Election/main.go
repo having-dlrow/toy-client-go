@@ -1,4 +1,4 @@
-package _Election
+package main
 
 import (
 	"context"
@@ -9,9 +9,11 @@ import (
 	"k8s.io/client-go/tools/clientcmd"
 	"k8s.io/client-go/tools/leaderelection"
 	"k8s.io/client-go/tools/leaderelection/resourcelock"
+	"k8s.io/client-go/util/homedir"
 	"k8s.io/klog/v2"
 	"os"
 	"os/signal"
+	"path/filepath"
 	"syscall"
 	"time"
 
@@ -26,10 +28,11 @@ func main() {
 	var leaseLockNamespace string
 	var id string
 
-	flag.StringVar(&kubeconfig, "kubeconfig", "", "absolute path to the kubeconfig file")
+	home := homedir.HomeDir()
+	flag.StringVar(&kubeconfig, "kubeconfig", filepath.Join(home, ".kube", "config"), "absolute path to the kubeconfig file")
 	flag.StringVar(&id, "id", uuid.New().String(), "the holder identity name")
-	flag.StringVar(&leaseLockName, "lease-lock-name", "", "the lease lock resource name")
-	flag.StringVar(&leaseLockNamespace, "lease-lock-namespace", "", "the lease lock resource namespace")
+	flag.StringVar(&leaseLockName, "lease-lock-name", "example", "the lease lock resource name")
+	flag.StringVar(&leaseLockNamespace, "lease-lock-namespace", "default", "the lease lock resource namespace")
 	flag.Parse()
 
 	if leaseLockName == "" {
